@@ -1,6 +1,8 @@
-import MenuRoutes from "./MenuRoutes";
+import Routes from "./Routes";
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import Navbar from "./components/layout/Navbar";
+import Sidebar from "./components/layout/Sidebar";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -9,9 +11,11 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div className="App">
+        <div className="app">
+          <Sidebar />
           <main className="content">
-            <MenuRoutes />
+            <Navbar />
+            <Routes />
           </main>
         </div>
       </ThemeProvider>
